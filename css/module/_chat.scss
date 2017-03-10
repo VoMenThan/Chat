@@ -1,0 +1,104 @@
+.container-chat{
+  margin: auto;
+  padding: 0;
+  width: 768px;
+  .list-right{
+    width: 300px;
+    float: left;
+  }
+  .chat-box{
+    width: calc(100% - 300px);
+    float: left;
+    border-left: 2px solid #ebebeb;
+    box-sizing: border-box;
+  }
+}
+.header-chat{
+  height: 70px;
+  border-bottom: 2px solid #ebebeb;
+  .title-box{
+    display: inline-block;
+    font-weight: bold;
+    padding-left: 25px;
+    padding-top: 30px;
+
+  }
+  .tools-chat{
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+    margin-top: 20px;
+    .name-user{
+      display: inline-block;
+      font-weight: bold;
+    }
+  }
+  .setting{
+    width: 30px;
+    height: 30px;
+    background: url("../images/ic-setting.png") no-repeat;
+  }
+}
+.search-list{
+  position: relative;
+  padding: 10px;
+  .search-box{
+    width: 260px;
+    height: 30px;
+    @include radius(20px);
+    padding-left: 20px;
+    border: none;
+    background: #f7f7f7;
+    display: block;
+    margin: auto;
+
+  }
+  .btn-search{
+    background: url("../images/ic-search.png") no-repeat;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+  }
+}
+.content-list{
+  padding: 10px;
+  .detail-friend{
+    position: relative;
+    .avt-user{
+      @include radius(30px);
+      width: 45px;
+    }
+    .name-friend{
+      display: inline-block;
+      font-size: 18px;
+      padding-left: 5px;
+      .tips{
+        font-size: 12px;
+        display: block;
+      }
+    }
+    .date-time{
+      width: 44px;
+      font-size: 12px;
+      position: absolute;
+      top: 0;
+      right: 10px;
+    }
+  }
+}
+.blue{
+  color: #028bd3;
+}
+.gray{
+  color: #bebebe;
+}
+.active-gray{
+  background: #f7f7f7;
+}
+.clear-fix{
+  clear: both;
+}
+
