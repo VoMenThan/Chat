@@ -7,6 +7,7 @@ body, html{
   padding: 0;
   font-size: 14px;
   height: 100%;
+  font-family: $main;
   .list-right{
     width: 300px;
     float: left;
@@ -28,7 +29,7 @@ body, html{
   align-items: center;
   padding-left: 10px;
   .title-box{
-    font-weight: bold;
+    font-family: $main-b;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -38,7 +39,7 @@ body, html{
     align-items: center;
     margin-right: 10px;
     .name-user{
-      font-weight: bold;
+      font-family: $main-b;
       margin-right: 10px;
       cursor: pointer;
     }
@@ -89,10 +90,11 @@ body, html{
       float: left;
     }
     .name-friend{
-      font-size: 18px;
+      font-size: 16px;
       padding-left: 5px;
       float: left;
       padding-top: 5px;
+      width: 190px;
       .tips{
         font-size: 12px;
         display: block;
@@ -143,7 +145,7 @@ body, html{
     }
     .btn-sent{
       cursor: pointer;
-      font-weight: bold;
+      font-family: $main-b;
     }
   }
 }
@@ -153,7 +155,7 @@ body, html{
   height: calc(100% - 131px);
   .date-chat{
     font-size: 18px;
-    font-weight: bold;
+    font-family: $main-b;
     padding: 20px;
     text-align: center;
   }
@@ -236,6 +238,17 @@ body, html{
     img{
       cursor: pointer;
     }
+  }
+}
+.overflow-space{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+.message{
+  .img-mes{
+    border-radius: 30px;
   }
 }
 .blue{

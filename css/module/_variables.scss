@@ -1,15 +1,44 @@
-$main: 'Roboto-Regular', Helvetica, arial,sans-serif;
-$main-l: 'Roboto-Light', Helvetica, arial,sans-serif;
-$main-m: 'Roboto-Medium', Helvetica, arial,sans-serif;
-$main-b: 'Roboto-Bold', Helvetica, arial,sans-serif;
-$main-c: 'roboto-condensed.regular', Helvetica, arial,sans-serif;
-$main-ci: 'roboto-condensed.italic', Helvetica, arial,sans-serif;
-$main-cb: 'roboto-condensed.bold', Helvetica, arial,sans-serif;
-$main-cbi: 'roboto-condensed.bold-italic', Helvetica, arial,sans-serif;
-$main-cl: 'roboto-condensed.light', Helvetica, arial,sans-serif;
-$main-cli: 'roboto-condensed.light-italic', Helvetica, arial,sans-serif;
+$main: 'HelveticaNeue', Helvetica, arial,sans-serif;
+$main-b: 'HelveticaNeue-Bold', Helvetica, arial,sans-serif;
+$main-i: 'HelveticaNeue-Italic', Helvetica, arial,sans-serif;
 
 $font-base: 14;
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('../fonts/HelveticaNeue.eot');
+  src: url('../fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/HelveticaNeue.woff2') format('woff2'),
+  url('../fonts/HelveticaNeue.woff') format('woff'),
+  url('../fonts/HelveticaNeue.ttf') format('truetype'),
+  url('../fonts/HelveticaNeue.svg#gothamvnubook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-Bold';
+  src: url('../fonts/HelveticaNeue-Bold.eot');
+  src: url('../fonts/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/HelveticaNeue-Bold.woff2') format('woff2'),
+  url('../fonts/HelveticaNeue-Bold.woff') format('woff'),
+  url('../fonts/HelveticaNeue-Bold.ttf') format('truetype'),
+  url('../fonts/HelveticaNeue-Bold.svg#gothamvnubook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-Italic';
+  src: url('../fonts/HelveticaNeue-Italic.eot');
+  src: url('../fonts/HelveticaNeue-Italic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/HelveticaNeue-Italic.woff2') format('woff2'),
+  url('../fonts/HelveticaNeue-Italic.woff') format('woff'),
+  url('../fonts/HelveticaNeue-Italic.ttf') format('truetype'),
+  url('../fonts/HelveticaNeue-Italic.svg#gothamvnubook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 // color variables
 $cl-win: #ff9c00;
