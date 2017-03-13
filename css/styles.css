@@ -934,19 +934,19 @@
 .container-chat {
   margin: auto;
   padding: 0;
-  width: 768px; }
+  font-size: 14px; }
   .container-chat .list-right {
     width: 300px;
     float: left; }
   .container-chat .chat-box {
     width: calc(100% - 300px);
     float: left;
-    border-left: 2px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
     box-sizing: border-box; }
 
 .header-chat {
   height: 70px;
-  border-bottom: 2px solid #ebebeb; }
+  border-bottom: 1px solid #ebebeb; }
   .header-chat .title-box {
     display: inline-block;
     font-weight: bold;
@@ -965,10 +965,10 @@
     height: 30px;
     background: url("../images/ic-setting.png") no-repeat; }
 
-.search-list {
+.search-box {
   position: relative;
   padding: 10px; }
-  .search-list .search-box {
+  .search-box .input-search {
     width: 260px;
     height: 30px;
     -webkit-border-radius: 20px;
@@ -981,7 +981,7 @@
     background: #f7f7f7;
     display: block;
     margin: auto; }
-  .search-list .btn-search {
+  .search-box .btn-search {
     background: url("../images/ic-search.png") no-repeat;
     display: block;
     width: 20px;
@@ -990,30 +990,105 @@
     top: 18px;
     right: 20px; }
 
-.content-list {
+.content-list .detail-friend {
+  position: relative;
   padding: 10px; }
-  .content-list .detail-friend {
-    position: relative; }
-    .content-list .detail-friend .avt-user {
+  .content-list .detail-friend:hover {
+    background: #f7f7f7;
+    cursor: pointer; }
+  .content-list .detail-friend .avt-user {
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    width: 45px;
+    float: left; }
+  .content-list .detail-friend .name-friend {
+    font-size: 18px;
+    padding-left: 5px;
+    float: left;
+    padding-top: 5px; }
+    .content-list .detail-friend .name-friend .tips {
+      font-size: 12px;
+      display: block; }
+  .content-list .detail-friend .date-time {
+    width: 45px;
+    font-size: 12px;
+    position: absolute;
+    top: 5px;
+    right: 10px; }
+
+.input-chat-box {
+  border-top: 1px solid #ebebeb;
+  padding: 10px;
+  box-sizing: content-box; }
+  .input-chat-box .input-chat {
+    width: 100%; }
+  .input-chat-box .box-input {
+    width: 100%;
+    height: 30px;
+    border: none; }
+  .input-chat-box .btn-ic {
+    width: 25px;
+    height: 25px;
+    display: block; }
+  .input-chat-box .btn-ic-smile {
+    background: url(../images/ic-mile.png);
+    margin-right: 10px; }
+  .input-chat-box .btn-ic-image {
+    background: url("../images/ic-image.png"); }
+
+.content-chat-box {
+  height: 400px; }
+
+.recive-messages {
+  position: relative; }
+  .recive-messages .avt-chat {
+    width: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px; }
+  .recive-messages .name-message {
+    margin-left: 60px;
+    padding: 5px 0; }
+  .recive-messages .message {
+    margin-left: 50px; }
+    .recive-messages .message .bg-gray {
+      background: #f7f7f7;
+      color: #000;
+      padding: 5px 10px;
       -webkit-border-radius: 30px;
       -moz-border-radius: 30px;
       -ms-border-radius: 30px;
       -o-border-radius: 30px;
       border-radius: 30px;
-      width: 45px; }
-    .content-list .detail-friend .name-friend {
       display: inline-block;
-      font-size: 18px;
-      padding-left: 5px; }
-      .content-list .detail-friend .name-friend .tips {
-        font-size: 12px;
-        display: block; }
-    .content-list .detail-friend .date-time {
-      width: 44px;
-      font-size: 12px;
-      position: absolute;
-      top: 0;
-      right: 10px; }
+      max-width: 70%; }
+  .recive-messages .time, .recive-messages .name-message {
+    font-size: 13px; }
+
+.send-messages .name-message {
+  margin-left: 60px;
+  padding: 5px 0; }
+.send-messages .message {
+  margin-left: 50px; }
+  .send-messages .message .bg-blue {
+    background: #028bd3;
+    color: #000;
+    padding: 5px 10px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    display: inline-block;
+    max-width: 70%; }
 
 .blue {
   color: #028bd3; }
@@ -1023,6 +1098,9 @@
 
 .active-gray {
   background: #f7f7f7; }
+
+a {
+  text-decoration: none; }
 
 .clear-fix {
   clear: both; }
