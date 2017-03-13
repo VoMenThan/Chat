@@ -1,37 +1,46 @@
+body, html{
+  height: 100%;
+  overflow: hidden;
+}
 .container-chat{
   margin: auto;
   padding: 0;
   font-size: 14px;
+  height: 100%;
   .list-right{
     width: 300px;
     float: left;
+    height:100%;
   }
   .chat-box{
     width: calc(100% - 300px);
     float: left;
     border-left: 1px solid #ebebeb;
     box-sizing: border-box;
-
+    height:100%;
   }
 }
 .header-chat{
   height: 70px;
   border-bottom: 1px solid #ebebeb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
   .title-box{
-    display: inline-block;
     font-weight: bold;
-    padding-left: 25px;
-    padding-top: 30px;
-
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .tools-chat{
-    display: inline-block;
-    float: right;
-    margin-right: 15px;
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
     .name-user{
-      display: inline-block;
       font-weight: bold;
+      margin-right: 10px;
+      cursor: pointer;
     }
   }
   .setting{
@@ -53,6 +62,7 @@
     background: #f7f7f7;
     display: block;
     margin: auto;
+    outline: 0;
   }
   .btn-search{
     background: url("../images/ic-search.png") no-repeat;
@@ -60,11 +70,12 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 18px;
-    right: 20px;
+    top: 16px;
+    right: 30px;
   }
 }
 .content-list{
+  height: calc(100% - 120px);
   .detail-friend{
     position: relative;
     padding: 10px;
@@ -98,15 +109,15 @@
 }
 .input-chat-box{
   border-top: 1px solid #ebebeb;
+  display: flex;
+  justify-content: space-between;
   padding: 10px;
-  box-sizing: content-box;
-  .input-chat{
-    width: 100%;
-  }
+  position: relative;
   .box-input{
-    width:100%;
-    height: 30px;
+    height: 40px;
+    width: calc(100% - 110px);
     border: none;
+   outline: 0;
   }
   .btn-ic{
     width: 25px;
@@ -116,37 +127,66 @@
   .btn-ic-smile{
     background: url(../images/ic-mile.png);
     margin-right: 10px;
+    cursor: pointer;
   }
   .btn-ic-image{
     background: url("../images/ic-image.png");
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .ic-box{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    #ic-image{
+      display: none;
+    }
+    .btn-sent{
+      cursor: pointer;
+      font-weight: bold;
+    }
   }
 }
 
+
 .content-chat-box{
-  height: 400px;
+  height: calc(100% - 131px);
+  .date-chat{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+  }
+  .time{
+    padding: 10px;
+  }
+  .recive-box, .send-box{
+    padding: 10px 0;
+  }
+}
+.name-message{
+  margin-left: 55px;
+  margin-bottom: 5px;
 }
 .recive-messages{
-  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-left: 15px;
   .avt-chat{
     width: 30px;
-    position: absolute;
-    bottom: 0;
-    left: 10px;
     @include radius(20px);
   }
-  .name-message{
-    margin-left: 60px;
-    padding: 5px 0;
-  }
   .message{
-    margin-left: 50px;
+    display: flex;
+    align-items: center;
     .bg-gray{
       background: #f7f7f7;
       color: #000;
-      padding: 5px 10px;
+      padding: 5px 15px;
       @include radius(30px);
-      display: inline-block;
       max-width:70%;
+      margin-left: 10px;
     }
   }
   .time, .name-message{
@@ -154,23 +194,50 @@
   }
 }
 .send-messages{
-  .name-message{
-    margin-left: 60px;
-    padding: 5px 0;
-  }
   .message{
-    margin-left: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 15px;
     .bg-blue{
       background: #028bd3;
       color: #000;
-      padding: 5px 10px;
+      padding: 5px 15px;
+      margin-bottom: 5px;
       @include radius(30px);
-      display: inline-block;
       max-width:70%;
     }
   }
 }
-
+.store-ic{
+  &:before{
+    content: " ";
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 11px;
+    background: #fff;
+    bottom: -6px;
+    border-top: 1px solid #bebebe;
+    border-right: 1px solid #bebebe;
+    @include rotate(129deg);
+  }
+  position: absolute;
+  bottom: 90%;
+  right: 60px;
+  border: 1px solid #bebebe;
+  padding: 6px;
+  @include radius(15px);
+  background: #ffffff;
+  display: none;
+  td{
+    padding: 5px;
+    img{
+      cursor: pointer;
+    }
+  }
+}
 .blue{
   color: #028bd3;
 }
@@ -186,4 +253,6 @@ a{
 .clear-fix{
   clear: both;
 }
-
+.mCSB_inside>.mCSB_container {
+  margin-right: 0;
+}

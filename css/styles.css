@@ -931,35 +931,92 @@
 
 /*define*/
 /*define*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+body, html {
+  height: 100%;
+  overflow: hidden; }
+
 .container-chat {
   margin: auto;
   padding: 0;
-  font-size: 14px; }
+  font-size: 14px;
+  height: 100%; }
   .container-chat .list-right {
     width: 300px;
-    float: left; }
+    float: left;
+    height: 100%; }
   .container-chat .chat-box {
     width: calc(100% - 300px);
     float: left;
     border-left: 1px solid #ebebeb;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    height: 100%; }
 
 .header-chat {
   height: 70px;
-  border-bottom: 1px solid #ebebeb; }
+  border-bottom: 1px solid #ebebeb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px; }
   .header-chat .title-box {
-    display: inline-block;
     font-weight: bold;
-    padding-left: 25px;
-    padding-top: 30px; }
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
   .header-chat .tools-chat {
-    display: inline-block;
-    float: right;
-    margin-right: 15px;
-    margin-top: 20px; }
+    display: flex;
+    align-items: center;
+    margin-right: 10px; }
     .header-chat .tools-chat .name-user {
-      display: inline-block;
-      font-weight: bold; }
+      font-weight: bold;
+      margin-right: 10px;
+      cursor: pointer; }
   .header-chat .setting {
     width: 30px;
     height: 30px;
@@ -980,115 +1037,176 @@
     border: none;
     background: #f7f7f7;
     display: block;
-    margin: auto; }
+    margin: auto;
+    outline: 0; }
   .search-box .btn-search {
     background: url("../images/ic-search.png") no-repeat;
     display: block;
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 18px;
-    right: 20px; }
+    top: 16px;
+    right: 30px; }
 
-.content-list .detail-friend {
-  position: relative;
-  padding: 10px; }
-  .content-list .detail-friend:hover {
-    background: #f7f7f7;
-    cursor: pointer; }
-  .content-list .detail-friend .avt-user {
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-    border-radius: 30px;
-    width: 45px;
-    float: left; }
-  .content-list .detail-friend .name-friend {
-    font-size: 18px;
-    padding-left: 5px;
-    float: left;
-    padding-top: 5px; }
-    .content-list .detail-friend .name-friend .tips {
+.content-list {
+  height: calc(100% - 120px); }
+  .content-list .detail-friend {
+    position: relative;
+    padding: 10px; }
+    .content-list .detail-friend:hover {
+      background: #f7f7f7;
+      cursor: pointer; }
+    .content-list .detail-friend .avt-user {
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      -o-border-radius: 30px;
+      border-radius: 30px;
+      width: 45px;
+      float: left; }
+    .content-list .detail-friend .name-friend {
+      font-size: 18px;
+      padding-left: 5px;
+      float: left;
+      padding-top: 5px; }
+      .content-list .detail-friend .name-friend .tips {
+        font-size: 12px;
+        display: block; }
+    .content-list .detail-friend .date-time {
+      width: 45px;
       font-size: 12px;
-      display: block; }
-  .content-list .detail-friend .date-time {
-    width: 45px;
-    font-size: 12px;
-    position: absolute;
-    top: 5px;
-    right: 10px; }
+      position: absolute;
+      top: 5px;
+      right: 10px; }
 
 .input-chat-box {
   border-top: 1px solid #ebebeb;
+  display: flex;
+  justify-content: space-between;
   padding: 10px;
-  box-sizing: content-box; }
-  .input-chat-box .input-chat {
-    width: 100%; }
+  position: relative; }
   .input-chat-box .box-input {
-    width: 100%;
-    height: 30px;
-    border: none; }
+    height: 40px;
+    width: calc(100% - 110px);
+    border: none;
+    outline: 0; }
   .input-chat-box .btn-ic {
     width: 25px;
     height: 25px;
     display: block; }
   .input-chat-box .btn-ic-smile {
     background: url(../images/ic-mile.png);
-    margin-right: 10px; }
+    margin-right: 10px;
+    cursor: pointer; }
   .input-chat-box .btn-ic-image {
-    background: url("../images/ic-image.png"); }
+    background: url("../images/ic-image.png");
+    margin-right: 5px;
+    cursor: pointer; }
+  .input-chat-box .ic-box {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; }
+    .input-chat-box .ic-box #ic-image {
+      display: none; }
+    .input-chat-box .ic-box .btn-sent {
+      cursor: pointer;
+      font-weight: bold; }
 
 .content-chat-box {
-  height: 400px; }
+  height: calc(100% - 131px); }
+  .content-chat-box .date-chat {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center; }
+  .content-chat-box .time {
+    padding: 10px; }
+  .content-chat-box .recive-box, .content-chat-box .send-box {
+    padding: 10px 0; }
+
+.name-message {
+  margin-left: 55px;
+  margin-bottom: 5px; }
 
 .recive-messages {
-  position: relative; }
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-left: 15px; }
   .recive-messages .avt-chat {
     width: 30px;
-    position: absolute;
-    bottom: 0;
-    left: 10px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     border-radius: 20px; }
-  .recive-messages .name-message {
-    margin-left: 60px;
-    padding: 5px 0; }
   .recive-messages .message {
-    margin-left: 50px; }
+    display: flex;
+    align-items: center; }
     .recive-messages .message .bg-gray {
       background: #f7f7f7;
       color: #000;
-      padding: 5px 10px;
+      padding: 5px 15px;
       -webkit-border-radius: 30px;
       -moz-border-radius: 30px;
       -ms-border-radius: 30px;
       -o-border-radius: 30px;
       border-radius: 30px;
-      display: inline-block;
-      max-width: 70%; }
+      max-width: 70%;
+      margin-left: 10px; }
   .recive-messages .time, .recive-messages .name-message {
     font-size: 13px; }
 
-.send-messages .name-message {
-  margin-left: 60px;
-  padding: 5px 0; }
 .send-messages .message {
-  margin-left: 50px; }
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 15px; }
   .send-messages .message .bg-blue {
     background: #028bd3;
     color: #000;
-    padding: 5px 10px;
+    padding: 5px 15px;
+    margin-bottom: 5px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
     border-radius: 30px;
-    display: inline-block;
     max-width: 70%; }
+
+.store-ic {
+  position: absolute;
+  bottom: 90%;
+  right: 60px;
+  border: 1px solid #bebebe;
+  padding: 6px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  background: #ffffff;
+  display: none; }
+  .store-ic:before {
+    content: " ";
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 11px;
+    background: #fff;
+    bottom: -6px;
+    border-top: 1px solid #bebebe;
+    border-right: 1px solid #bebebe;
+    -webkit-transform: rotate(129deg);
+    -moz-transform: rotate(129deg);
+    -ms-transform: rotate(129deg);
+    -o-transform: rotate(129deg);
+    transform: rotate(129deg); }
+  .store-ic td {
+    padding: 5px; }
+    .store-ic td img {
+      cursor: pointer; }
 
 .blue {
   color: #028bd3; }
@@ -1104,5 +1222,8 @@ a {
 
 .clear-fix {
   clear: both; }
+
+.mCSB_inside > .mCSB_container {
+  margin-right: 0; }
 
 /*# sourceMappingURL=styles.css.map */
